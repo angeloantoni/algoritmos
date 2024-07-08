@@ -1,38 +1,56 @@
-// Questão 01:
-
-// a) Em nenhum momento.
-// b) 5
-// c) Sim, a expressão é válida. 
-// d) Sim, a expressão é válida. 
-// e) Não, a expressão só é válida quando o valor de x é 1.3735
-// f) z(x) = x^^3
-
-// Questão 02:
 #include <stdio.h>
 
 int main(){
 
     int qtd_numeros = 0;
-    printf("digite a quantidade de números: ");
+    printf("digite a quantidade de números do vetor: ");
     scanf("%d", &qtd_numeros); 
 
     int vetor[qtd_numeros];
 
     printf("digite os números: ");
-    for(int i = 0; i < qtd_numeros; i++){
+    for(int i = 0; i < (qtd_numeros); i++){
         scanf("%d", &vetor[i]);
     }
 
-    int ordenado = 1;
+    for(int j = 0; j < qtd_numeros; j++){
+        for(int i = 0; i < qtd_numeros - 1; i++){
+            if(vetor[i] > vetor[i + 1]){
+                int temp = vetor[i];
+                vetor[i] = vetor[i + 1]; 
+                vetor[i + 1] = temp;
+            }
+        }
+    }
 
-    for(int i = 0; i < qtd_numeros - 1; i++){
-        if(vetor[i] > vetor[i + 1]){ 
-            ordenado = 0; 
-            break; 
-        } 
+    for(int i = 0; i < qtd_numeros; i++){
+        printf("%d ", vetor[i]);
     }
-    if (ordenado){
-        printf("ORDENADO! \n"); 
+        printf("\n");
+
+        int num_extra;
+        printf("digite o número extra: "); 
+        scanf("%d", &num_extra); 
+        vetor[qtd_numeros] = num_extra;
+        qtd_numeros++;
+
+        for(int j = 0; j < qtd_numeros; j++){
+            for(int i = 0; i < qtd_numeros - 1; i++){
+                if(vetor[i] > vetor[i + 1]){
+                    int temp = vetor[i];
+                    vetor[i] = vetor[i + 1]; 
+                    vetor[i + 1] = temp;
+            }
+        }
     }
-    else{printf("Não ordenado! \n");};  
+
+      for(int i = 0; i < qtd_numeros; i++){
+        printf("%d ", vetor[i]);
+    }
+        printf("\n");
+
+
+return 0; 
 }
+
+// otimizar código com funções
