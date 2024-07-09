@@ -1,0 +1,12 @@
+
+
+int i , j , k , s;                          -> N
+for(i =0; i < N−1; i ++){                   -> O(N)  
+    for ( j= i +1; j < N; j ++){            -> O(N)
+        for ( k=1; k < j ; k++){            -> O(N)
+            s = 1 ;                         -> N
+        }
+    }
+}                                           O(N)*O(N)*O(N) + N + N
+                                            O(N^^3) + 2N
+                                            R: Algoritmo de complexidade O(N^^3)

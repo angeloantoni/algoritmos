@@ -1,12 +1,3 @@
-// Questão 01:
-
-// a) Em nenhum momento.
-// b) 5
-// c) Sim, a expressão é válida. 
-// d) Sim, a expressão é válida. 
-// e) Não, a expressão só é válida quando o valor de x é 1.3735
-// f) z(x) = x^^3
-
 // Questão 02:
 #include <stdio.h>
 

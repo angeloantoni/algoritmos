@@ -1,0 +1,9 @@
+int i , j , s ;                         -> N 
+s = 0 ;                                 -> N
+for ( i =1; i < N−1; i ++){             -> O(N)     
+    for ( j =1; j < 2∗N; j ++){         -> O(N)
+        s = s + 1 ;                     -> N 
+    }       
+}                                       O(N) * O(N) + N + N + N 
+                                        O(N^^2) + 3N
+                                        R: Algoritmo de complexidade O(N^^2)

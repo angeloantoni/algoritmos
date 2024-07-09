@@ -49,3 +49,6 @@ int main(){
     bubbleSort(tamanho_array, vetor);
     printArray(tamanho_array + 1, vetor);
 }
+
+/* A função de custo é o (tamanho - 1) * número de trocas de elementos do array. Sua complexidade
+é O(N^^2)*/
