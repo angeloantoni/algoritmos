@@ -1,0 +1,3 @@
+1. O código tem como complexidade O(n). O loop for executa n vezes, onde n é o valor de entrada. 
+Portanto, a complexidade de tempo deste código é constante e o número de iterações é proporcional
+ao valor de n.

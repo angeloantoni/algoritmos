@@ -1,0 +1,3 @@
+3. Este código também tem como tempo de execução uma constante. Seu tempo de execução
+irá depender de n e da posição dos itens dentro do array para o resultado da comparação. 
+Portanto, a complexidade de tempo é O(n), sendo o melhor caso O(1).

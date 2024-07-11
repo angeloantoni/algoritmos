@@ -1,0 +1,2 @@
+2. O código possui dois laços aninhados. Ambos executam n vezes, sendo assim 
+uma complexidade O(n^^2).
