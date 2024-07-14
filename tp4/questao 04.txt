@@ -1,0 +1,1 @@
+Ordem de crescimento quadrática. A complexidade de tempo é O(n^^2).

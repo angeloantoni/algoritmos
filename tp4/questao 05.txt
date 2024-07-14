@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(){
+
+    int numeros[5] = {10, 20, 30, 40, 50}; 
+    int *ptr = numeros; 
+
+    printf("%d\n", * (ptr+2));
+
+
+}
+
+A saída será == numeros[2], ou seja, 30. 
