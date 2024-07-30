@@ -54,8 +54,10 @@ int inserirFim(int numero){
 }
 
 int removeInicio(){
+
     struct ListaNumero *velho;
-    int inicio;
+    struct ListaNumero *inicio = NULL;
+
     int retorno = 1;
     velho = inicio;
     if (velho == NULL){
@@ -69,7 +71,19 @@ int removeInicio(){
 }
 
 int removeFim(){
-    //fazer
+    struct ListaNumero *velho;
+    struct ListaNumero *fim = NULL;
+
+    int retorno = 1;
+    velho = inicio;
+    if (velho == NULL){
+        retorno = -1;
+    }
+    else{
+        inicio = inicio->proximo;
+        free(velho);
+    }
+    return retorno;
 }
 
 int buscaNumero(int numero) {
@@ -85,4 +99,34 @@ int buscaNumero(int numero) {
         atual = atual->proximo;
     }
     return retorno; 
+}
+
+int main(){
+    int op = 0;
+    while(op != 0){
+        printf("0 - SAIR\n 1 - LISTAR ELEMENTOS DA LISTA\n 2 - INSERIR NO INÍCIO\n 3 - INSERIR NO FIM\n 4 - REMOVER DO INÍCIO\n 5 - REMOVER DO FIM\n 6 - BUSCAR ELEMENTO\n");
+        if(op == 1){
+            //fazer
+    }
+        else if(op == 2){
+            int num = 0;
+            printf("Digite o número a ser inserido: \n");
+            scanf("%d", &num);
+            inserirInicio(num);
+        }
+       else if(op == 3){
+            int num = 0;
+            printf("Digite o número a ser inserido: \n");
+            scanf("%d", &num);
+            inserirFim(num); 
+       }
+       else if(op == 4){
+            removeInicio();
+       }
+       else if(op == 5){
+            removeFim();
+       }
+       else if(op == 6){
+            buscaNumero;
+       }
 }
