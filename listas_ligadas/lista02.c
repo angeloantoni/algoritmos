@@ -7,6 +7,7 @@ struct ListaNumero {
 };
 
 struct ListaNumero *inicio = NULL;
+struct ListaNumero *menor = NULL;
 
 void percorrerLista() {
     struct ListaNumero *atual = inicio;
@@ -17,15 +18,15 @@ void percorrerLista() {
     }
 }
 
-int inserirInicio(int numero) {
+void inserirInicio(int numero) {
     struct ListaNumero *novo = (struct ListaNumero*) malloc(sizeof(struct ListaNumero));
-    if (novo == NULL) {
-        return -1;
-    }
+//    if (novo == NULL) {
+//        return -1;
+//    }
     novo->numero = numero;
     novo->proximo = inicio;
     inicio = novo;
-    return 1;
+    return;
 }
 
 int inserirFim(int numero) {
@@ -87,38 +88,37 @@ int buscaNumero(int numero) {
     return -1;
 }
 
+int ordenacao(int numero) {
+    struct ListaNumero *atual = menor;
+    while (atual != NULL){
+        if (atual->numero < menor){
+            inserirInicio(atual);
+        }
+        else if(atual->numero > menor){
+            inserirFim(atual);
+        }
+    }
+}
+
 int main() {
     int op = -1;
+    int qtd_elementos = 0;
+    int elementos[qtd_elementos]; 
     while (op != 0) {
-        printf("0 - SAIR\n1 - LISTAR ELEMENTOS DA LISTA\n2 - INSERIR NO INÍCIO\n3 - INSERIR NO FIM\n4 - REMOVER DO INÍCIO\n5 - REMOVER DO FIM\n6 - BUSCAR ELEMENTO\n");
+        printf("0 - SAIR\n1 - INSERIR ELEMENTOS\n2 - ORDENAR\n3 - LISTAR ELEMENTOS\n ");
         scanf("%d", &op);
         if (op == 1) {
-            percorrerLista();
-        } else if (op == 2) {
-            int num;
-            printf("Digite o número a ser inserido: \n");
-            scanf("%d", &num);
-            inserirInicio(num);
-        } else if (op == 3) {
-            int num;
-            printf("Digite o número a ser inserido: \n");
-            scanf("%d", &num);
-            inserirFim(num);
-        } else if (op == 4) {
-            removeInicio();
-        } else if (op == 5) {
-            removeFim();
-        } else if (op == 6) {
-            int num;
-            printf("Digite o número a ser buscado: \n");
-            scanf("%d", &num);
-            int resultado = buscaNumero(num);
-            if (resultado == 1) {
-                printf("Número encontrado.\n");
-            } else {
-                printf("Número não encontrado.\n");
+            printf("Digite a quantidade de elementos a ser inserido:\n");
+            scanf("%d", &qtd_elementos);
+            printf("Digite os elementos a ser inseridos: \n");
+            for(int i = 0; i < qtd_elementos; i++){
+                inserirInicio(elementos[i]);
             }
-        }
+        } else if (op == 2) {
+            ordenacao(elementos[qtd_elementos]);
+        } else if (op == 3) {
+           percorrerLista();
+        } 
     }
     return 0;
 }
